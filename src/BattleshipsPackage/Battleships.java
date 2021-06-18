@@ -14,8 +14,6 @@ Ships Ethan = new Ships(3, "HMS Ethan");
 Ships Leon = new Ships(3, "HMS Leon");
 Ships Patrick = new Ships(2, "HMS Patrick");
 
-int NumberOfRows = 10;
-int NumberOfColumns = 10;
 int NumberOfShips = 8;
 
 String Ships = "Ship";
@@ -26,6 +24,7 @@ String Miss = "Miss";
 String[][] Board = new String[10][10];
 
 Arrays.fill(Board, Water);
+
 
 
 }
