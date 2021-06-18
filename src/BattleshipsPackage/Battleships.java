@@ -1,8 +1,6 @@
 package BattleshipsPackage;
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.ArrayList;
-
-
 
 public class Battleships {
 
@@ -25,14 +23,10 @@ String Water = "Water";
 String Hit = "Hit";
 String Miss = "Miss";
 
+String[][] Board = new String[10][10];
 
-ArrayList<ArrayList<GameBoardRow>> Board = new ArrayList<ArrayList<GameBoardRow> >(10);
+Arrays.fill(Board, Water);
 
 
-
-ArrayList<String> Row = new ArrayList<String>(10);
-for (int i =0; i <=9; i++){
-Board.set(i, Water);
-}
 }
 }
