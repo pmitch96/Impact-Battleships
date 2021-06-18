@@ -3,7 +3,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Battleships {
- public static Scanner input = new Scanner(System.in);
+
+public static Scanner input = new Scanner(System.in);
 
  public static void main(String[] args) {
   Ships HMS_Gareth = new Ships(4);
@@ -14,7 +15,7 @@ public class Battleships {
   int hit = 2;
   int miss = 3;
 
-  int[][] Board = new int[4][4];
+int[][] Board = new int[4][4];
 
   Arrays.fill(Board, water);
 
@@ -36,7 +37,6 @@ public class Battleships {
   int x_guess = input.nextInt();
   System.out.println("Please input the y co-ordinate of your guess");
   int y_guess = input.nextInt();
-
   int OutPut = Board[x_guess][y_guess];
 
   if (OutPut == 1) {
@@ -46,11 +46,15 @@ public class Battleships {
   } else {
    System.out.println("Miss");
    Board[x_guess][y_guess] = 3;
+  }
 
    if (NumberOfHits == 7) {
     System.out.println("Game over!");
    }
-  }
+    else {
+     //run through again.
+   }
+
  }
 }
 

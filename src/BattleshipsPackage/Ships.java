@@ -1,10 +1,6 @@
 package BattleshipsPackage;
 
 public class Ships {
-
-
-
-
 //////////Attributes
 protected int size;
 
