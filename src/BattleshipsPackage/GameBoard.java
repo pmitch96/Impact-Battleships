@@ -1,8 +1,6 @@
 package BattleshipsPackage;
 
-public class HMS_Jordan extends Ships {
-
-
+public class GameBoard {
 
 //////////Attributes
 
@@ -16,4 +14,3 @@ public class HMS_Jordan extends Ships {
 
 //////////Methods
 }
-
