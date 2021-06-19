@@ -6,59 +6,61 @@ public class Battleships {
 
 public static Scanner input = new Scanner(System.in);
 
+
  public static void main(String[] args) {
 //  Ships HMS_Gareth = new Ships(4);
 //  Ships HMS_Jordan = new Ships(3);
 
-  int water = 0;
-  int ships = 1;
-  int hit = 2;
-  int miss = 3;
+  //String water = "W";
+  String hit = "X"; //Symbol used in the pen and paper version of battleships
+  String miss = "O"; //Symbol used in the pen and paper version of battleships
+  String ship = "S";
 
-int[][] Board = new int[4][4];
-
-System.out.println(Arrays.deepToString(Board));
+String[][] Board = new String[10][10];
 
 
 //Placing HMS_Gareth
 
   for (int i = 0; i <= 3; i++) {
-   Board[0][i] = 1;
+   Board[0][i] = ship;
   }
 
 //Placing HMS_Jordan
 
   for (int i = 0; i <= 2; i++) {
-   Board[3][i] = 1;
+   Board[3][i] = ship;
   }
 
-  System.out.println(Arrays.deepToString(Board));
 
-  int NumberOfHits = 0;
+
+ System.out.println(Arrays.deepToString(Board));
+
 
   System.out.println("Please input the x co-ordinate of your guess");
   int x_guess = input.nextInt();
   System.out.println("Please input the y co-ordinate of your guess");
   int y_guess = input.nextInt();
-  int OutPut = Board[x_guess][y_guess];
+  String OutPut = Board[x_guess][y_guess];
 
-  if (OutPut == 1) {
+  int NumberHits = 0;
+
+  if (OutPut == ship) {
    System.out.println("Hit!");
-   Board[x_guess][y_guess] = 2;
-   int CurrentNumberOfHits = NumberOfHits +1;
+   Board[x_guess][y_guess] = hit;
+   NumberHits = NumberHits + 1;
+
   } else {
    System.out.println("Miss");
-   Board[x_guess][y_guess] = 3;
+   Board[x_guess][y_guess] = miss;
   }
 
-   if (NumberOfHits == 7) {
-    System.out.println("Game over!");
-   }
-    else {
-     //run through again.
-   }
+  if (NumberHits == 1 ) {
+      System.out.println("Game Over!");
+  }
+System.out.println(Arrays.deepToString(Board));
 
  }
+
 }
 
 
