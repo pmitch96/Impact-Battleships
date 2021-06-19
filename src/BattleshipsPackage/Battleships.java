@@ -11,12 +11,16 @@ public static Scanner input = new Scanner(System.in);
 //  Ships HMS_Gareth = new Ships(4);
 //  Ships HMS_Jordan = new Ships(3);
 
-  //String water = "W";
-  String hit = "X"; //Symbol used in the pen and paper version of battleships
-  String miss = "O"; //Symbol used in the pen and paper version of battleships
+  String water = "~";
+  String hit = "X";
+  String miss = "O";
   String ship = "S";
 
 String[][] Board = new String[10][10];
+
+for (String[] row : Board){
+    Arrays.fill(row, water);
+}
 
 
 //Placing HMS_Gareth
@@ -31,18 +35,15 @@ String[][] Board = new String[10][10];
    Board[3][i] = ship;
   }
 
-
-
  System.out.println(Arrays.deepToString(Board));
 
+  int NumberHits = 0;
 
   System.out.println("Please input the x co-ordinate of your guess");
   int x_guess = input.nextInt();
   System.out.println("Please input the y co-ordinate of your guess");
   int y_guess = input.nextInt();
   String OutPut = Board[x_guess][y_guess];
-
-  int NumberHits = 0;
 
   if (OutPut == ship) {
    System.out.println("Hit!");
@@ -57,6 +58,7 @@ String[][] Board = new String[10][10];
   if (NumberHits == 1 ) {
       System.out.println("Game Over!");
   }
+
 System.out.println(Arrays.deepToString(Board));
 
  }
