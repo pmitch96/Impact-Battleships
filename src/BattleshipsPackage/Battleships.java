@@ -7,8 +7,8 @@ public class Battleships {
 public static Scanner input = new Scanner(System.in);
 
  public static void main(String[] args) {
-  Ships HMS_Gareth = new Ships(4);
-  Ships HMS_Jordan = new Ships(3);
+//  Ships HMS_Gareth = new Ships(4);
+//  Ships HMS_Jordan = new Ships(3);
 
   int water = 0;
   int ships = 1;
@@ -17,7 +17,8 @@ public static Scanner input = new Scanner(System.in);
 
 int[][] Board = new int[4][4];
 
-  Arrays.fill(Board, water);
+System.out.println(Arrays.deepToString(Board));
+
 
 //Placing HMS_Gareth
 
@@ -28,8 +29,10 @@ int[][] Board = new int[4][4];
 //Placing HMS_Jordan
 
   for (int i = 0; i <= 2; i++) {
-   Board[3][0] = 1;
+   Board[3][i] = 1;
   }
+
+  System.out.println(Arrays.deepToString(Board));
 
   int NumberOfHits = 0;
 

@@ -1,6 +1,6 @@
 package BattleshipsPackage;
 
-public class Ships {
+public abstract class Ships {
 //////////Attributes
 protected int size;
 
