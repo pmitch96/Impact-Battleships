@@ -1,4 +1,5 @@
 package BattleshipsPackage;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class Battleships {
     }
 
     public static void main(String[] args) {
+
 //  Ships HMS_Gareth = new Ships(4);
 //  Ships HMS_Jordan = new Ships(3);
 
@@ -31,25 +33,51 @@ public class Battleships {
             Arrays.fill(row, water);
         }
 
+       //ArrayList<Ships> ships; {
+      //      ships = new ArrayList<Ships>();
+       // }
+
 
 //Placing HMS_Gareth
 
-        for (int i = 0; i <= 3; i++) {
-            Board[0][i] = ship;
+        System.out.println("Place HMS_Gareth, using 5 consecutive co-ordinates");
+
+        for (int i = 0; i <=4; i++){
+        System.out.println("Please input an x co-ordinate");
+        int x_co_ordinate = input.nextInt();
+        System.out.println("Please input a y co-ordinate");
+        int y_co_ordinate = input.nextInt();
+        Board[x_co_ordinate][y_co_ordinate] = ship;
         }
+        printBoard();
+
+
+       // for (int i = 0; i <= 3; i++) {
+        //    Board[0][i] = ship;
+        //}
 
 //Placing HMS_Jordan
 
-        for (int i = 0; i <= 2; i++) {
-            Board[3][i] = ship;
-        }
+       // for (int i = 0; i <= 2; i++) {
+        //    Board[3][i] = ship;
+        //}
 
+        System.out.println("Place HMS_Jordan, using 4 consecutive co-ordinates");
+
+        for (int i = 0; i <=3; i++){
+            System.out.println("Please input an x co-ordinate");
+            int x_co_ordinate = input.nextInt();
+            System.out.println("Please input a y co-ordinate");
+            int y_co_ordinate = input.nextInt();
+            Board[x_co_ordinate][y_co_ordinate] = ship;
+        }
 
         printBoard();
 
         int NumberHits = 0;
 
-        while (NumberHits < 7) {
+
+        while (NumberHits < 9) {
 
             System.out.println("Please input the x co-ordinate of your guess");
             int x_guess = input.nextInt();
@@ -75,7 +103,7 @@ public class Battleships {
                 printBoard();
             }
 
-            if (NumberHits == 7) {
+            if (NumberHits == 9) {
                 System.out.println("Game Over!");
             }
 
