@@ -4,8 +4,18 @@ import java.util.Scanner;
 
 public class Battleships {
 
+public static String[][] Board = new String[10][10];
+
 public static Scanner input = new Scanner(System.in);
 
+public static void printBoard() {
+    for (int j = 0; j<= 9; j++){
+        for (int i = 0; i <= 9; i++) {
+            System.out.print(Board[j][i] + " ");
+        }
+        System.out.println();
+    }
+}
 
  public static void main(String[] args) {
 //  Ships HMS_Gareth = new Ships(4);
@@ -16,7 +26,6 @@ public static Scanner input = new Scanner(System.in);
   String miss = "O";
   String ship = "S";
 
-String[][] Board = new String[10][10];
 
 for (String[] row : Board){
     Arrays.fill(row, water);
@@ -35,14 +44,8 @@ for (String[] row : Board){
    Board[3][i] = ship;
   }
 
-  for (int j = 0; j<= 9; j++){
-  for (int i = 0; i <= 9; i++) {
-      System.out.print(Board[j][i] + " ");
-  }
-  System.out.println();
-  }
 
-
+printBoard();
 
 
   int NumberHits = 0;
@@ -67,12 +70,7 @@ for (String[] row : Board){
       System.out.println("Game Over!");
   }
 
-     for (int j = 0; j<= 9; j++){
-         for (int i = 0; i <= 9; i++) {
-             System.out.print(Board[j][i] + " ");
-         }
-         System.out.println();
-     }
+     printBoard();
 
  }
 
