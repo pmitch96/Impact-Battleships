@@ -18,17 +18,17 @@ public class Battleships {
     }
 
     public static void placeShip(){
-        Ships[] shipObjects = new Ships[5];
-        shipObjects[0] = new Ships(5, "Gareth");
-        shipObjects[1] = new Ships(4, "Jordan");
-        shipObjects[2] = new Ships(3, "Ethan");
-        shipObjects[3] = new Ships(3, "Leon");
-        shipObjects[4] = new Ships(2, "Patrick");
+        Ships[] ShipsToPlace = new Ships[5];
+        ShipsToPlace[0] = new Ships(5, "Gareth");
+        ShipsToPlace[1] = new Ships(4, "Jordan");
+        ShipsToPlace[2] = new Ships(3, "Ethan");
+        ShipsToPlace[3] = new Ships(3, "Leon");
+        ShipsToPlace[4] = new Ships(2, "Patrick");
 
-        for (int j = 0; j<= 4; j++) {
+        for (int j = 0; j <= 4; j++) {
 
-            System.out.println("Place " + shipObjects[0].getName() + " using 5 consecutive co-ordinates");
-            for (int i = 0; i <= (shipObjects[0].getSize() - 1); i++) {
+            System.out.println("Place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
+            for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
                 System.out.println("Please input an x co-ordinate");
                 int x_co_ordinate = input.nextInt();
                 System.out.println("Please input a y co-ordinate");
