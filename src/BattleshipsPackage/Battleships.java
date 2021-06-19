@@ -35,7 +35,15 @@ for (String[] row : Board){
    Board[3][i] = ship;
   }
 
- System.out.println(Arrays.deepToString(Board));
+  for (int j = 0; j<= 9; j++){
+  for (int i = 0; i <= 9; i++) {
+      System.out.print(Board[j][i] + " ");
+  }
+  System.out.println();
+  }
+
+
+
 
   int NumberHits = 0;
 
@@ -59,7 +67,12 @@ for (String[] row : Board){
       System.out.println("Game Over!");
   }
 
-System.out.println(Arrays.deepToString(Board));
+     for (int j = 0; j<= 9; j++){
+         for (int i = 0; i <= 9; i++) {
+             System.out.print(Board[j][i] + " ");
+         }
+         System.out.println();
+     }
 
  }
 
