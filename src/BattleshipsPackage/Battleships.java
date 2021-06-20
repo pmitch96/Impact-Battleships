@@ -1,5 +1,4 @@
 package BattleshipsPackage;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Battleships {
@@ -12,73 +11,10 @@ public class Battleships {
 
     public static GameBoard P2GamePlayBoard = new GameBoard();
 
-
     public static Scanner input = new Scanner(System.in);
-
 
     public static String P1Name = "Patrick";
     public static String P2Name = "Clive";
-
-    public static void placeShipP1(){
-
-        Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Carrier", "5");
-        ShipsToPlace[1] = new Ships(4, "Battleship", "4");
-        ShipsToPlace[2] = new Ships(3, "Destroyer", "3");
-        ShipsToPlace[3] = new Ships(3, "Submarine", "2");
-        ShipsToPlace[4] = new Ships(2, "Patrol Boat", "1");
-
-        for (int j = 0; j <= 4; j++) {
-
-            System.out.println("Admiral " + P1Name + ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
-            for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
-                int x_co_ordinate;
-                int y_co_ordinate;
-                do {System.out.println("Please input an x co-ordinate");
-                x_co_ordinate = input.nextInt();}
-                while (x_co_ordinate < 0 || x_co_ordinate > P1Board.getBoard().length);
-                do {System.out.println("Please input a y co-ordinate");
-                y_co_ordinate = input.nextInt();}
-                while (y_co_ordinate < 0 || y_co_ordinate > P1Board.getBoard().length);
-                P1Board.getBoard()[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
-
-            }
-            P1Board.printBoard();
-        }
-        for (int k = 0; k <=50; k++) {
-            System.out.println(" ");
-        }
-    }
-    public static void placeShipP2(){
-        Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Carrier", "5");
-        ShipsToPlace[1] = new Ships(4, "Battleship", "4");
-        ShipsToPlace[2] = new Ships(3, "Destroyer", "3");
-        ShipsToPlace[3] = new Ships(3, "Submarine", "2");
-        ShipsToPlace[4] = new Ships(2, "Patrol Boat", "1");
-
-        for (int j = 0; j <= 4; j++) {
-
-            System.out.println("Admiral "+ P2Name+ ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
-            for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
-                int x_co_ordinate;
-                int y_co_ordinate;
-                do {System.out.println("Please input an x co-ordinate");
-                 x_co_ordinate = input.nextInt();}
-                while (x_co_ordinate < 0 || x_co_ordinate > P2Board.getBoard().length);
-                do {System.out.println("Please input a y co-ordinate");
-                y_co_ordinate = input.nextInt();}
-                while (y_co_ordinate < 0 || y_co_ordinate > P2Board.getBoard().length);
-                P2Board.getBoard()[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
-
-            }
-            P2Board.printBoard();
-
-            }
-        for (int k = 0; k <=50; k++) {
-            System.out.println(" ");
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -87,27 +23,13 @@ public class Battleships {
     String miss = "O";
     String ship = "*";
 
-        GameBoard P1Board = new GameBoard();
-        P1Board.fillBoard();
-        P1Board.printBoard();
+    P1Board.fillBoard();
+    P1GamePlayBoard.fillBoard();
+    P2Board.fillBoard();
+    P2GamePlayBoard.fillBoard();
+    P1Board.placeShip();
+    P2Board.placeShip();
 
-
-
-    for (String[] row : P1GamePlayBoard.getBoard()) {
-            Arrays.fill(row, water);
-        }
-
-    for (String[] row : P2Board.getBoard()) {
-            Arrays.fill(row, water);
-        }
-
-    for (String[] row : P2GamePlayBoard.getBoard()) {
-            Arrays.fill(row, water);
-        }
-
-    placeShipP1();
-
-    placeShipP2();
 
         int P1NumberHits = 0;
         int P2NumberHits = 0;
