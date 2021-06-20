@@ -28,7 +28,6 @@ public class Battleships {
     P1Board.placeShips();
     P2Board.placeShips();
 
-
         int P1NumberHits = 0;
         int P2NumberHits = 0;
 
