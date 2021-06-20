@@ -1,6 +1,23 @@
 package BattleshipsPackage;
 
+import java.util.Arrays;
+
 public class GameBoard {
+//////////Attributes
+private final String[][] gameBoard = new String[10][10];
+
+
+
+//////////Constructors
+public GameBoard() {
+}
+
+
+//////////Methods
+
+public String[][] getBoard() {
+        return gameBoard;
+    }
 
     public void printBoard() {
         for (int j = 0; j <= 9; j++) {
@@ -10,26 +27,10 @@ public class GameBoard {
             System.out.println();
         }
     }
-
-
-
-
-    //////////Attributes
-public static String[][] gameBoard = new String[10][10];
-
-
-//////////Constructors
-public GameBoard() {
+     public void fillBoard(){
+    for(String[] row : gameBoard) {
+        Arrays.fill(row, "~");
+    }
 }
-
-//////////Methods
-
-    public static String[][] getGameBoard() {
-        return gameBoard;
-    }
-
-    public static void setGameBoard(String[][] gameBoard) {
-        GameBoard.gameBoard = gameBoard;
-    }
 
 }
