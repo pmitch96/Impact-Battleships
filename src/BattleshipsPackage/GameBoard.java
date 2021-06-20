@@ -7,11 +7,9 @@ public class GameBoard {
 private final String[][] gameBoard = new String[10][10];
 
 
-
 //////////Constructors
 public GameBoard() {
 }
-
 
 //////////Methods
 
@@ -33,7 +31,7 @@ public String[][] getBoard() {
     }
 }
 
-    public void placeShip(){
+    public void placeShips(){
 
         Scanner input = new Scanner(System.in);
 

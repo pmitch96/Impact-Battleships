@@ -18,17 +18,15 @@ public class Battleships {
 
     public static void main(String[] args) {
 
-    String water = "~";
     String hit = "X";
     String miss = "O";
-    String ship = "*";
 
     P1Board.fillBoard();
     P1GamePlayBoard.fillBoard();
     P2Board.fillBoard();
     P2GamePlayBoard.fillBoard();
-    P1Board.placeShip();
-    P2Board.placeShip();
+    P1Board.placeShips();
+    P2Board.placeShips();
 
 
         int P1NumberHits = 0;
