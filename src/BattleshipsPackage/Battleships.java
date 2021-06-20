@@ -53,11 +53,11 @@ public static String P2Name = "Clive";
     public static void placeShipP1(){
 
         Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Gareth", 0);
-        ShipsToPlace[1] = new Ships(4, "Jordan", 0);
-        ShipsToPlace[2] = new Ships(3, "Ethan", 0);
-        ShipsToPlace[3] = new Ships(3, "Leon", 0);
-        ShipsToPlace[4] = new Ships(2, "Patrick", 0);
+        ShipsToPlace[0] = new Ships(5, "Carrier");
+        ShipsToPlace[1] = new Ships(4, "Battleship");
+        ShipsToPlace[2] = new Ships(3, "Destroyer");
+        ShipsToPlace[3] = new Ships(3, "Submarine");
+        ShipsToPlace[4] = new Ships(2, "Patrol Boat");
 
         for (int j = 0; j <= 4; j++) {
 
@@ -77,11 +77,11 @@ public static String P2Name = "Clive";
     }
     public static void placeShipP2(){
         Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Gareth", 0);
-        ShipsToPlace[1] = new Ships(4, "Jordan", 0);
-        ShipsToPlace[2] = new Ships(3, "Ethan", 0);
-        ShipsToPlace[3] = new Ships(3, "Leon", 0);
-        ShipsToPlace[4] = new Ships(2, "Patrick", 0);
+        ShipsToPlace[0] = new Ships(5, "Carrier");
+        ShipsToPlace[1] = new Ships(4, "Battleship");
+        ShipsToPlace[2] = new Ships(3, "Destroyer");
+        ShipsToPlace[3] = new Ships(3, "Submarine");
+        ShipsToPlace[4] = new Ships(2, "Patrol Boat");
 
         for (int j = 0; j <= 4; j++) {
 
@@ -92,6 +92,7 @@ public static String P2Name = "Clive";
                 System.out.println("Please input a y co-ordinate");
                 int y_co_ordinate = input.nextInt();
                 P2Board[x_co_ordinate][y_co_ordinate] = "*";
+
             }
             printBoardP2();
         }
