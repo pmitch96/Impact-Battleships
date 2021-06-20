@@ -2,25 +2,17 @@ package BattleshipsPackage;
 import java.util.Scanner;
 
 public class Battleships {
-
-    public static GameBoard P1Board = new GameBoard();
-
-    public static GameBoard P1GamePlayBoard = new GameBoard();
-
-    public static GameBoard P2Board = new GameBoard();
-
-    public static GameBoard P2GamePlayBoard = new GameBoard();
-
-    public static Scanner input = new Scanner(System.in);
-
-    public static String P1Name = "Patrick";
-    public static String P2Name = "Clive";
-
     public static void main(String[] args) {
-
+    Scanner input = new Scanner(System.in);
+    String P1Name = "Patrick";
+    String P2Name = "Clive";
     String hit = "X";
     String miss = "O";
 
+    GameBoard P1Board = new GameBoard();
+    GameBoard P1GamePlayBoard = new GameBoard();
+    GameBoard P2Board = new GameBoard();
+    GameBoard P2GamePlayBoard = new GameBoard();
     P1Board.fillBoard();
     P1GamePlayBoard.fillBoard();
     P2Board.fillBoard();
