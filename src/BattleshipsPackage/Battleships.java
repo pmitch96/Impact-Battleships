@@ -96,11 +96,12 @@ public static String P2Name = "Clive";
                 int y_co_ordinate;
                 do {System.out.println("Please input an x co-ordinate");
                  x_co_ordinate = input.nextInt();}
-                while (x_co_ordinate < 0 || x_co_ordinate > P1Board.length);
+                while (x_co_ordinate < 0 || x_co_ordinate > P2Board.length);
                 do {System.out.println("Please input a y co-ordinate");
                 y_co_ordinate = input.nextInt();}
-                while (y_co_ordinate < 0 || y_co_ordinate > P1Board.length);
-                P2Board[x_co_ordinate][y_co_ordinate] = "*";
+                while (y_co_ordinate < 0 || y_co_ordinate > P2Board.length);
+                do {P2Board[x_co_ordinate][y_co_ordinate] = "*";}
+                while(P2Board[x_co_ordinate][y_co_ordinate] == "~");
 
             }
             printBoardP2();
