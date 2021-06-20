@@ -12,7 +12,6 @@ public class Battleships {
 
     public static String[][] P2GamePlayBoard = new String[10][10];
 
-
     public static Scanner input = new Scanner(System.in);
 
     public static void printBoardP1() {
@@ -48,8 +47,11 @@ public class Battleships {
             System.out.println();
         }
     }
+public static String P1Name = "Patrick";
+public static String P2Name = "Clive";
 
     public static void placeShipP1(){
+
         Ships[] ShipsToPlace = new Ships[5];
         ShipsToPlace[0] = new Ships(5, "Gareth", 0);
         ShipsToPlace[1] = new Ships(4, "Jordan", 0);
@@ -59,7 +61,7 @@ public class Battleships {
 
         for (int j = 0; j <= 4; j++) {
 
-            System.out.println("Player 1, please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
+            System.out.println("Admiral " + P1Name + ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
             for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
                 System.out.println("Please input an x co-ordinate");
                 int x_co_ordinate = input.nextInt();
@@ -83,7 +85,7 @@ public class Battleships {
 
         for (int j = 0; j <= 4; j++) {
 
-            System.out.println("Player 2, please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
+            System.out.println("Admiral "+ P2Name+ ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
             for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
                 System.out.println("Please input an x co-ordinate");
                 int x_co_ordinate = input.nextInt();
@@ -100,10 +102,6 @@ public class Battleships {
 
     public static void main(String[] args) {
 
-    System.out.println("Player 1, please enter your name");
-    String P1Name = input.next();
-    System.out.println("Player 2, please enter your name");
-    String P2Name = input.next();
 
     String water = "~";
     String hit = "X";
