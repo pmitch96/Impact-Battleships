@@ -8,32 +8,16 @@ public class Battleships {
 
     public static GameBoard P1GamePlayBoard = new GameBoard();
 
-    public static String[][] P2Board = new String[10][10];
+    public static GameBoard P2Board = new GameBoard();
 
-    public static String[][] P2GamePlayBoard = new String[10][10];
+    public static GameBoard P2GamePlayBoard = new GameBoard();
+
 
     public static Scanner input = new Scanner(System.in);
 
 
-    public static void printBoardP2() {
-        for (int j = 0; j <= 9; j++) {
-            for (int i = 0; i <= 9; i++) {
-                System.out.print(P2Board[j][i] + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public static void printGamePlayBoardP2() {
-        for (int j = 0; j <= 9; j++) {
-            for (int i = 0; i <= 9; i++) {
-                System.out.print(P2GamePlayBoard[j][i] + " ");
-            }
-            System.out.println();
-        }
-    }
-public static String P1Name = "Patrick";
-public static String P2Name = "Clive";
+    public static String P1Name = "Patrick";
+    public static String P2Name = "Clive";
 
     public static void placeShipP1(){
 
@@ -81,14 +65,14 @@ public static String P2Name = "Clive";
                 int y_co_ordinate;
                 do {System.out.println("Please input an x co-ordinate");
                  x_co_ordinate = input.nextInt();}
-                while (x_co_ordinate < 0 || x_co_ordinate > P2Board.length);
+                while (x_co_ordinate < 0 || x_co_ordinate > P2Board.getBoard().length);
                 do {System.out.println("Please input a y co-ordinate");
                 y_co_ordinate = input.nextInt();}
-                while (y_co_ordinate < 0 || y_co_ordinate > P2Board.length);
-                P2Board[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
+                while (y_co_ordinate < 0 || y_co_ordinate > P2Board.getBoard().length);
+                P2Board.getBoard()[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
 
             }
-            printBoardP2();
+            P2Board.printBoard();
 
             }
         for (int k = 0; k <=50; k++) {
@@ -113,11 +97,11 @@ public static String P2Name = "Clive";
             Arrays.fill(row, water);
         }
 
-    for (String[] row : P2Board) {
+    for (String[] row : P2Board.getBoard()) {
             Arrays.fill(row, water);
         }
 
-    for (String[] row : P2GamePlayBoard) {
+    for (String[] row : P2GamePlayBoard.getBoard()) {
             Arrays.fill(row, water);
         }
 
@@ -137,15 +121,15 @@ public static String P2Name = "Clive";
             x_guessP1 = input.nextInt();
             System.out.println("Admiral " + P1Name + ", please input the y co-ordinate of your guess");
             y_guessP1 = input.nextInt();
-            String OutPutP1 = P2Board[x_guessP1][y_guessP1];
+            String OutPutP1 = P2Board.getBoard()[x_guessP1][y_guessP1];
 
 
             if (OutPutP1 == "5" || OutPutP1 == "4" || OutPutP1 == "3"|| OutPutP1 == "2"|| OutPutP1 == "1") {
                 System.out.println("Hit!");
-                P2Board[x_guessP1][y_guessP1] = hit;
-                P2GamePlayBoard[x_guessP1][y_guessP1] = hit;
+                P2Board.getBoard()[x_guessP1][y_guessP1] = hit;
+                P2GamePlayBoard.getBoard()[x_guessP1][y_guessP1] = hit;
                 P1NumberHits = P1NumberHits + 1;
-                printGamePlayBoardP2();
+                P2GamePlayBoard.printBoard();
             }
             else if (OutPutP1 == miss){
                 System.out.println("Please enter co-ordinates that haven't been used before");
@@ -155,9 +139,9 @@ public static String P2Name = "Clive";
             }
             else {
                 System.out.println("Miss");
-                P2Board[x_guessP1][y_guessP1] = miss;
-                P2GamePlayBoard[x_guessP1][y_guessP1] = miss;
-                printGamePlayBoardP2();
+                P2Board.getBoard()[x_guessP1][y_guessP1] = miss;
+                P2GamePlayBoard.getBoard()[x_guessP1][y_guessP1] = miss;
+                P2GamePlayBoard.printBoard();
             }
 
 
