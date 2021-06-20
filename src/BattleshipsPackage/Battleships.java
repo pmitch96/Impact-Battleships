@@ -100,8 +100,7 @@ public static String P2Name = "Clive";
                 do {System.out.println("Please input a y co-ordinate");
                 y_co_ordinate = input.nextInt();}
                 while (y_co_ordinate < 0 || y_co_ordinate > P2Board.length);
-                do {P2Board[x_co_ordinate][y_co_ordinate] = "*";}
-                while(P2Board[x_co_ordinate][y_co_ordinate] == "~");
+                P2Board[x_co_ordinate][y_co_ordinate] = "*";
 
             }
             printBoardP2();
