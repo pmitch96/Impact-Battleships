@@ -6,12 +6,23 @@ public class Battleships {
 
     public static String[][] Board = new String[10][10];
 
+    public static String[][] GamePlayBoard = new String[10][10];
+
     public static Scanner input = new Scanner(System.in);
 
     public static void printBoard() {
         for (int j = 0; j <= 9; j++) {
             for (int i = 0; i <= 9; i++) {
                 System.out.print(Board[j][i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printGamePlayBoard() {
+        for (int j = 0; j <= 9; j++) {
+            for (int i = 0; i <= 9; i++) {
+                System.out.print(GamePlayBoard[j][i] + " ");
             }
             System.out.println();
         }
@@ -56,7 +67,7 @@ public class Battleships {
 
         int NumberHits = 0;
 
-        while (NumberHits < 9) {
+        while (NumberHits < 17) {
 
             System.out.println("Please input the x co-ordinate of your guess");
             int x_guess = input.nextInt();
@@ -82,7 +93,7 @@ public class Battleships {
                 printBoard();
             }
 
-            if (NumberHits == 9) {
+            if (NumberHits == 17) {
                 System.out.println("Game Over!");
             }
 
