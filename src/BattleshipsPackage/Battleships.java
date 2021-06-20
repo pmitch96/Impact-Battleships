@@ -53,11 +53,11 @@ public static String P2Name = "Clive";
     public static void placeShipP1(){
 
         Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Carrier");
-        ShipsToPlace[1] = new Ships(4, "Battleship");
-        ShipsToPlace[2] = new Ships(3, "Destroyer");
-        ShipsToPlace[3] = new Ships(3, "Submarine");
-        ShipsToPlace[4] = new Ships(2, "Patrol Boat");
+        ShipsToPlace[0] = new Ships(5, "Carrier", "5");
+        ShipsToPlace[1] = new Ships(4, "Battleship", "4");
+        ShipsToPlace[2] = new Ships(3, "Destroyer", "3");
+        ShipsToPlace[3] = new Ships(3, "Submarine", "2");
+        ShipsToPlace[4] = new Ships(2, "Patrol Boat", "1");
 
         for (int j = 0; j <= 4; j++) {
 
@@ -71,22 +71,22 @@ public static String P2Name = "Clive";
                 do {System.out.println("Please input a y co-ordinate");
                 y_co_ordinate = input.nextInt();}
                 while (y_co_ordinate < 0 || y_co_ordinate > P1Board.length);
-                P1Board[x_co_ordinate][y_co_ordinate] = "*";
+                P1Board[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
 
             }
             printBoardP1();
         }
-        for (int k = 0; k <=29; k++) {
+        for (int k = 0; k <=50; k++) {
             System.out.println(" ");
         }
     }
     public static void placeShipP2(){
         Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Carrier");
-        ShipsToPlace[1] = new Ships(4, "Battleship");
-        ShipsToPlace[2] = new Ships(3, "Destroyer");
-        ShipsToPlace[3] = new Ships(3, "Submarine");
-        ShipsToPlace[4] = new Ships(2, "Patrol Boat");
+        ShipsToPlace[0] = new Ships(5, "Carrier", "5");
+        ShipsToPlace[1] = new Ships(4, "Battleship", "4");
+        ShipsToPlace[2] = new Ships(3, "Destroyer", "3");
+        ShipsToPlace[3] = new Ships(3, "Submarine", "2");
+        ShipsToPlace[4] = new Ships(2, "Patrol Boat", "1");
 
         for (int j = 0; j <= 4; j++) {
 
@@ -100,12 +100,12 @@ public static String P2Name = "Clive";
                 do {System.out.println("Please input a y co-ordinate");
                 y_co_ordinate = input.nextInt();}
                 while (y_co_ordinate < 0 || y_co_ordinate > P2Board.length);
-                P2Board[x_co_ordinate][y_co_ordinate] = "*";
+                P2Board[x_co_ordinate][y_co_ordinate] = ShipsToPlace[j].getType();
 
             }
             printBoardP2();
         }
-        for (int k = 0; k <=29; k++) {
+        for (int k = 0; k <=50; k++) {
             System.out.println(" ");
         }
     }
@@ -144,10 +144,13 @@ public static String P2Name = "Clive";
 
         while (P1NumberHits < 17 && P2NumberHits < 17) {
 
+            int x_guessP1;
+            int y_guessP1;
+
             System.out.println("Admiral " + P1Name + ", please input the x co-ordinate of your guess");
-            int x_guessP1 = input.nextInt();
+            x_guessP1 = input.nextInt();
             System.out.println("Admiral " + P1Name + ", please input the y co-ordinate of your guess");
-            int y_guessP1 = input.nextInt();
+            y_guessP1 = input.nextInt();
             String OutPutP1 = P2Board[x_guessP1][y_guessP1];
 
             if (OutPutP1 == ship) {
@@ -172,10 +175,9 @@ public static String P2Name = "Clive";
 
             System.out.println("Admiral " + P2Name + ", please input the x co-ordinate of your guess");
             int x_guessP2 = input.nextInt();
-            //while (x_guessP2 < 0 || x_guessP2 > P2Board.length);
             System.out.println("Admiral " + P2Name + ", please input the y co-ordinate of your guess");
             int y_guessP2 = input.nextInt();
-            String OutPutP2 = P2Board[x_guessP2][y_guessP2];
+            String OutPutP2 = P1Board[x_guessP2][y_guessP2];
 
             if (OutPutP2 == ship) {
                 System.out.println("Hit!");
@@ -200,9 +202,7 @@ public static String P2Name = "Clive";
             if (P1NumberHits == 17 || P2NumberHits == 17) {
                 System.out.println("Game Over!");
             }
-
         }
-
     }
 }
 

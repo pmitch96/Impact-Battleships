@@ -5,10 +5,13 @@ public class Ships {
 protected int size;
 protected String name;
 
+    protected String type;
+
 //////////Constructors
-public Ships(int size, String name) {
+public Ships(int size, String name, String type) {
         this.size = size;
         this.name ="HMS_" + name;
+        this.type = type;
 
 }
 
@@ -28,5 +31,14 @@ public Ships(int size, String name) {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 
 }
