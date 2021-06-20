@@ -48,6 +48,9 @@ public class Battleships {
             }
             printBoard();
         }
+        for (int k = 0; k <=29; k++) {
+            System.out.println(" ");
+        }
     }
 
     public static void main(String[] args) {
@@ -58,10 +61,20 @@ public class Battleships {
     String miss = "O";
     String ship = "*";
 
+    GameBoard testBoard = new GameBoard();
+
+
+
+    System.out.println(testBoard);
+
 
     for (String[] row : Board) {
         Arrays.fill(row, water);
     }
+
+        for (String[] row : GamePlayBoard) {
+            Arrays.fill(row, water);
+        }
 
     placeShip();
 
@@ -78,8 +91,9 @@ public class Battleships {
             if (OutPut == ship) {
                 System.out.println("Hit!");
                 Board[x_guess][y_guess] = hit;
+                GamePlayBoard[x_guess][y_guess] = hit;
                 NumberHits = NumberHits + 1;
-                printBoard();
+                printGamePlayBoard();
             }
             else if (OutPut == miss){
                 System.out.println("Please enter co-ordinates that haven't been used before");
@@ -90,7 +104,8 @@ public class Battleships {
             else {
                 System.out.println("Miss");
                 Board[x_guess][y_guess] = miss;
-                printBoard();
+                GamePlayBoard[x_guess][y_guess] = miss;
+                printGamePlayBoard();
             }
 
             if (NumberHits == 17) {

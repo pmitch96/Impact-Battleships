@@ -3,8 +3,8 @@ package BattleshipsPackage;
 public class Ships {
 //////////Attributes
 protected int size;
-
 protected String name;
+
 
 //////////Constructors
 public Ships(int size, String name) {
