@@ -63,11 +63,16 @@ public static String P2Name = "Clive";
 
             System.out.println("Admiral " + P1Name + ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
             for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
-                System.out.println("Please input an x co-ordinate");
-                int x_co_ordinate = input.nextInt();
-                System.out.println("Please input a y co-ordinate");
-                int y_co_ordinate = input.nextInt();
+                int x_co_ordinate;
+                int y_co_ordinate;
+                do {System.out.println("Please input an x co-ordinate");
+                x_co_ordinate = input.nextInt();}
+                while (x_co_ordinate < 0 || x_co_ordinate > P1Board.length);
+                do {System.out.println("Please input a y co-ordinate");
+                y_co_ordinate = input.nextInt();}
+                while (y_co_ordinate < 0 || y_co_ordinate > P1Board.length);
                 P1Board[x_co_ordinate][y_co_ordinate] = "*";
+
             }
             printBoardP1();
         }
@@ -87,10 +92,14 @@ public static String P2Name = "Clive";
 
             System.out.println("Admiral "+ P2Name+ ", please place " + ShipsToPlace[j].getName() + " using 5 consecutive co-ordinates, which aren't currently occupied by a ship");
             for (int i = 0; i <= (ShipsToPlace[j].getSize() - 1); i++) {
-                System.out.println("Please input an x co-ordinate");
-                int x_co_ordinate = input.nextInt();
-                System.out.println("Please input a y co-ordinate");
-                int y_co_ordinate = input.nextInt();
+                int x_co_ordinate;
+                int y_co_ordinate;
+                do {System.out.println("Please input an x co-ordinate");
+                 x_co_ordinate = input.nextInt();}
+                while (x_co_ordinate < 0 || x_co_ordinate > P1Board.length);
+                do {System.out.println("Please input a y co-ordinate");
+                y_co_ordinate = input.nextInt();}
+                while (y_co_ordinate < 0 || y_co_ordinate > P1Board.length);
                 P2Board[x_co_ordinate][y_co_ordinate] = "*";
 
             }
@@ -163,6 +172,7 @@ public static String P2Name = "Clive";
 
             System.out.println("Admiral " + P2Name + ", please input the x co-ordinate of your guess");
             int x_guessP2 = input.nextInt();
+            //while (x_guessP2 < 0 || x_guessP2 > P2Board.length);
             System.out.println("Admiral " + P2Name + ", please input the y co-ordinate of your guess");
             int y_guessP2 = input.nextInt();
             String OutPutP2 = P2Board[x_guessP2][y_guessP2];
