@@ -36,11 +36,11 @@ public String[][] getBoard() {
         Scanner input = new Scanner(System.in);
 
         Ships[] ShipsToPlace = new Ships[5];
-        ShipsToPlace[0] = new Ships(5, "Carrier", "5");
-        ShipsToPlace[1] = new Ships(4, "Battleship", "4");
-        ShipsToPlace[2] = new Ships(3, "Destroyer", "3");
-        ShipsToPlace[3] = new Ships(3, "Submarine", "2");
-        ShipsToPlace[4] = new Ships(2, "Patrol Boat", "1");
+        ShipsToPlace[0] = new Ships(5, "Gareth", "5");
+        ShipsToPlace[1] = new Ships(4, "Jordan", "4");
+        ShipsToPlace[2] = new Ships(3, "Ethan", "3");
+        ShipsToPlace[3] = new Ships(3, "Leon", "2");
+        ShipsToPlace[4] = new Ships(2, "Patrick", "1");
 
         for (int j = 0; j <= 4; j++) {
 
