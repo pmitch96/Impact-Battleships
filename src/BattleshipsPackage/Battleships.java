@@ -14,6 +14,7 @@ public class Battleships {
 
     public static Scanner input = new Scanner(System.in);
 
+
     public static void printBoardP1() {
         for (int j = 0; j <= 9; j++) {
             for (int i = 0; i <= 9; i++) {
@@ -104,7 +105,8 @@ public static String P2Name = "Clive";
 
             }
             printBoardP2();
-        }
+
+            }
         for (int k = 0; k <=50; k++) {
             System.out.println(" ");
         }
@@ -153,7 +155,8 @@ public static String P2Name = "Clive";
             y_guessP1 = input.nextInt();
             String OutPutP1 = P2Board[x_guessP1][y_guessP1];
 
-            if (OutPutP1 == ship) {
+
+            if (OutPutP1 == "5" || OutPutP1 == "4" || OutPutP1 == "3"|| OutPutP1 == "2"|| OutPutP1 == "1") {
                 System.out.println("Hit!");
                 P2Board[x_guessP1][y_guessP1] = hit;
                 P2GamePlayBoard[x_guessP1][y_guessP1] = hit;
@@ -173,32 +176,30 @@ public static String P2Name = "Clive";
                 printGamePlayBoardP2();
             }
 
+
             System.out.println("Admiral " + P2Name + ", please input the x co-ordinate of your guess");
             int x_guessP2 = input.nextInt();
             System.out.println("Admiral " + P2Name + ", please input the y co-ordinate of your guess");
             int y_guessP2 = input.nextInt();
             String OutPutP2 = P1Board[x_guessP2][y_guessP2];
 
-            if (OutPutP2 == ship) {
-                System.out.println("Hit!");
-                P1Board[x_guessP2][y_guessP2] = hit;
-                P1GamePlayBoard[x_guessP2][y_guessP2] = hit;
-                P2NumberHits = P2NumberHits + 1;
-                printGamePlayBoardP1();
-            }
-            else if (OutPutP2 == miss){
-                System.out.println("Please enter co-ordinates that haven't been used before");
-            }
-            else if (OutPutP2 == hit){
-                System.out.println("Please enter co-ordinates that haven't been used before");
-            }
-            else {
-                System.out.println("Miss");
-                P1Board[x_guessP2][y_guessP2] = miss;
-                P1GamePlayBoard[x_guessP2][y_guessP2] = miss;
-                printGamePlayBoardP1();
-            }
 
+            if (OutPutP2 == "5" || OutPutP2 == "4" || OutPutP2 == "3"|| OutPutP2 == "2"|| OutPutP2 == "1") {
+                    System.out.println("Hit!");
+                    P1Board[x_guessP2][y_guessP2] = hit;
+                    P1GamePlayBoard[x_guessP2][y_guessP2] = hit;
+                    P2NumberHits = P2NumberHits + 1;
+                    printGamePlayBoardP1();
+            } else if (OutPutP2 == miss) {
+                    System.out.println("Please enter co-ordinates that haven't been used before");
+            } else if (OutPutP2 == hit) {
+                    System.out.println("Please enter co-ordinates that haven't been used before");
+            } else {
+                    System.out.println("Miss");
+                    P1Board[x_guessP2][y_guessP2] = miss;
+                    P1GamePlayBoard[x_guessP2][y_guessP2] = miss;
+                    printGamePlayBoardP1();
+                }
             if (P1NumberHits == 17 || P2NumberHits == 17) {
                 System.out.println("Game Over!");
             }
