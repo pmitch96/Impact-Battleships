@@ -3,14 +3,15 @@ package BattleshipsPackage;
 public class Ships {
 //////////Attributes
 protected int size;
-protected int hits;
 protected String name;
 
+    protected String type;
+
 //////////Constructors
-public Ships(int size, String name, int hits) {
+public Ships(int size, String name, String type) {
         this.size = size;
         this.name ="HMS_" + name;
-        this.hits = hits;
+        this.type = type;
 
 }
 
@@ -31,12 +32,12 @@ public Ships(int size, String name, int hits) {
         this.name = name;
     }
 
-    public int getHits() {
-        return hits;
+    public String getType() {
+        return type;
     }
 
-    public void setHits(int hits) {
-        this.hits = hits;
+    public void setType(String type) {
+        this.type = type;
     }
 
 
